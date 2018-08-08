@@ -1,0 +1,29 @@
+os.path 模块使用
+
+
+1、 os.path.abspath(path)
+	返回path规范化的绝对路径
+
+2、 os.path.split(path)
+	将path分割成目录和文件名二元组返回
+
+3、 os.path.dirname(path)
+	返回path的目录
+
+4、 os.path.basename(path)
+	返回path最后的文件名
+
+5、 os.path.exists(path)
+	判断path是否存在 bool
+
+6、 os.path.isabs(path)
+	判断path是否是绝对路径 bool
+
+7、 os.path.isfile(path)
+	判断path是否为一个存在的文件 bool
+
+8、 os.path.getsize(path)
+	返回文件的大小(字节)
+
+9、 os.path.join
+	将多个路径组合后返回，第一个绝对路径之前的参数将被忽略。 

@@ -1,0 +1,31 @@
+python-读取文件问题并解决
+
+
+
+with open(musi_list, 'r') as file:
+	music_list = list(map(lambda x:x.strip(), file.readlines()))
+
+for first,str in enumerate(music_list):
+	
+	//todo 继续执行业务
+
+
+
+
+
+直接运行上面的代码会报一个编码的错误， 什么gbk 	~~~~~啦啦啦一堆
+
+
+修改
+
+	open(xxx, 'r')   ->   open(xxx, 'rb')   修改为以二进制的方式读取文件内容
+
+	but, 这样的修改会造成字符串乱码
+
+	所以我们还要去修改一下编码
+
+	str.decode('utf-8')
+
+
+
+

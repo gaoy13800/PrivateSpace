@@ -1,0 +1,29 @@
+
+
+python open函数用于打开一个文件，创建一个file对象，相关的方法才可以调用它进行读写
+
+
+r 以只读的方式打开文件。文件的指针将会放在文件的开头。这个也是默认模式
+
+rb 跟r是一样的，只不过它的打开方式是以二进制的方式
+
+r+ 打开一个文件进行读写 。
+
+rb+ 同 r+，还是打开方式为二进制
+
+w 打开一个文件用于写入
+
+wb 以二进制格式打开一个文件用于写入  ******************************常用
+
+a 打开一个文件用于追加(append)
+
+ab 以二进制格式打开一个文件用于追加
+
+
+
+// 常用的模式
+
+with open (file_path, wb) as file:
+	for chunk in response.iter_content(chunk_size=1024):
+		if chunk:
+			file.write(chunk)
