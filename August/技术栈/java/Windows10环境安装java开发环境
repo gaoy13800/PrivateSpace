@@ -1,0 +1,13 @@
+Windows10环境安装java开发环境
+
+
+环境变量配置
+
+新建 JAVA_HOME  jdk-10.* 绝对路径的地址
+
+新建 CLASSPATH .;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;
+
+path 新增 %JAVA_HOME%\bin       和 jre目录的bin目录   E:\Tools\Java\jre\bin
+
+
+cmd 输入 javac java 有输出内容则环境部署完成
