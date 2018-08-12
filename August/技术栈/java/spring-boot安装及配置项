@@ -1,0 +1,44 @@
+
+
+
+首先说安装
+
+	java目录配置   JAVA_HOME java目录
+
+					cmd 输入java确认安装成功
+
+
+	maven 安装 3.5版本
+
+					环境变量配置  M2_HOME maven的安装目录
+
+					cmd 输入 mvn -version 显示版本 安装成功
+
+
+	重要一点 maven的setting.xml 更改其包下载源为aliyun 			
+	更改仓库位置
+
+
+	<localRepository>D:/.m2/repos</localRepository>  
+
+	 <mirror>
+		<id>nexus-aliyun</id>
+		<mirrorOf>*</mirrorOf>
+		<name>Nexus aliyun</name>
+		<url>http://maven.aliyun.com/nexus/content/groups/public</url>
+	 </mirror>	
+
+
+	 复制一份setting文件到 C:\Users\Gaoy\.m2   不然idea在生成新的spring boot项目时会应用不上aliyun的配置下载报错
+
+
+	 还要去更改idea的maven配置为本地的maven，它默认是用的自带的maven
+
+
+
+
+	 code 注意项
+
+
+
+	 resource 目录下的 application.re*改为 application.yml
