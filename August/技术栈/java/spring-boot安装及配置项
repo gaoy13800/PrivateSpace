@@ -57,3 +57,17 @@
    		<artifactId> spring-boot-configuration-processor </artifactId>
    		<optional> true </optional>
 		</dependency>
+
+
+	spring-boot 项目创建方式  https://start.spring.io/ 生成demobingdaoru
+				或者使用idea创建
+
+	项目结构				
+
+		包含： pom.xml  maven构建说明文件
+			  package下面有一个 xxxApplication.java 一个带有main方法的类，用于启动应用程序
+			  上面对应的还有一个单元测试类  xxxApplicationTests.java: 一个空的Junit测试类，它加载了一个使用spring boot字典配置功能的spring应用程序上下文。
+			  application.properties 一个空的properties文件，你可以根据需要添加配置属性。
+
+	现在解析 pom.xml
+	
