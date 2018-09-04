@@ -1,0 +1,23 @@
+mysql表引擎有哪几种？区别和场景
+
+
+
+引擎名称: MyISAM InnoDB MERGE MEMORY(HEAP) CSV BLACKHOLE ARCHIVE
+
+mysql中有多种存储引擎，每种引擎不只MyISAM 和 InnoDB这两个，但常用的就是两个。
+
+
+两种存储引擎的大致区别表现在：
+
+1、 InnoDB 支持事务， MyISAM不支持
+2、 InnoDB 支持外键， MyISAM不支持
+3、 InnoDB 支持行级锁、 MyISAM 支持表锁
+4、清空整个表时，InnoDB是一行一行的删除，效率非常慢。MyISAM则会重建表。
+5、 从MySQL5.5.5以后，InnoDB是默认引擎。
+
+
+MYISAM和INNODB是Mysql数据库提供的两种存储引擎。两者的优劣可谓是各有千秋。INNODB会支持一些关系数据库的高级功能，如事务功能和行级锁，MYISAM不支持。MYISAM的性能更优，占用的存储空间少。所以，选择何种存储引擎，视具体应用而定：
+
+1）如果你的应用程序一定要使用事务，毫无疑问你要选择INNODB引擎。但要注意，INNODB的行级锁是有条件的。在where条件没有使用主键时，照样会锁全表。比如DELETE FROM mytable这样的删除语句。
+
+2）如果你的应用程序对查询性能要求较高，就要使用MYISAM了。MYISAM索引和数据是分开的，而且其索引是压缩的，可以更好地利用内存。所以它的查询性能明显优于INNODB。压缩后的索引也能节约一些磁盘空间。MYISAM拥有全文索引的功能，这可以极大地优化LIKE查询的效率。
