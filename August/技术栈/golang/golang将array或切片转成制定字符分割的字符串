@@ -1,0 +1,11 @@
+
+
+golang 一行代码 把array/slice转成逗号分隔的字符串
+
+array或slice  ->   指定字符分割的字符串
+phoneStr := strings.Replace(strings.Trim(fmt.Sprint(phones), "[]"), " ", "|", -1)
+
+
+字符串  ->  array or slice
+
+phoneList := strings.Split(phones, "|")

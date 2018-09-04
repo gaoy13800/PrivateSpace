@@ -1,0 +1,44 @@
+
+
+1、 首先我们需要看一下为什么会需要垃圾回收，如果不进行垃圾回收的话，内存迟早要被消耗空，因为我们在不断的分配内存空间而不进行回收
+	除非内存无限大，我们可以任性的分配而不回收，但并非如此，所以垃圾回收是必须的。
+
+
+2、 哪些内存需要回收？
+	哪些内存需要回收是垃圾回收是第一个要考虑的问题，所谓“要回收的垃圾”无非就是那些不可能再被任何途径使用对象。这就引申到了我们如何去找到这些对象
+
+	如何找到已经无用的对象？
+
+	1、 引用计数法
+
+	这是一个算法，而这个算法的实现是，给对象中添加一个引用计数器，每当有一个地方引用一个对象时，计数值+1；当引用失效时，计数值-1.任何时刻计数值为0的对象
+	就是不可能再被使用的。这种算法使用场景很多，但是java中却没有使用这种算法，因为这算法很难解决对象之间相互引用的情况。
+
+
+		/**
+ 		* 虚拟机参数：-verbose:gc
+ 		*/
+	public class ReferenceCountingGC
+	{
+    	private Object instance = null;
+    	private static final int _1MB = 1024 * 1024;
+    
+   		 /** 这个成员属性唯一的作用就是占用一点内存 */
+    	private byte[] bigSize = new byte[2 * _1MB];
+    
+    	public static void main(String[] args)
+     {
+       	 	ReferenceCountingGC objectA = new ReferenceCountingGC();
+        	ReferenceCountingGC objectB = new ReferenceCountingGC();
+        	objectA.instance = objectB;
+        	objectB.instance = objectA;
+        	objectA = null;
+        	objectB = null;
+        
+       		 System.gc();
+    }
+}
+
+运行结棍
+
+
