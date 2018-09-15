@@ -1,0 +1,8 @@
+Python自动测试打开chrome时，chrome地址栏总是出现data:;
+
+
+在刚开始使用Python编写自动化测试代码的时候，会用代码打开chrome，firefox和IE浏览器来进行调试，但是，我发现可以打开IE却不能打开Chrome，每次打开的chrome的时候总是在地址栏出现“data:;”，却并不能打开链接地址，尝试了很多种方法，却没有想到，竟然是自己的chrome和下载的chromedriver的版本不匹配。重新下载了匹配的chromedriver之后，果真就可以运行成功了，下面是其他人给的chromedriver的下载地址：
+
+http://chromedriver.storage.googleapis.com/index.html
+
+我下载了 2.6的版本
